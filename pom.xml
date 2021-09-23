@@ -25,6 +25,7 @@
         <lombok.version>1.16.10</lombok.version>
         <fastjson.version>1.2.47</fastjson.version>
         <jnxaread.version>1.0.0</jnxaread.version>
+        <maven-surefire.version>2.22.2</maven-surefire.version>
     </properties>
 
     <dependencyManagement>
@@ -106,10 +107,13 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>${spring-boot.version}</version>
             </plugin>
+            <!-- maven-surefire-plugin的作用是跳过打包时的单元测试 -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
+                <version>${maven-surefire.version}</version>
                 <configuration>
                     <skipTests>true</skipTests>
                 </configuration>
